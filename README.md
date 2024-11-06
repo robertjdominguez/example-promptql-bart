@@ -1,6 +1,6 @@
 # Example: Realtime Chat Application on the BART API
 
-This is a simple example of exposing PromptQL to real-time public data using the BART API. The BART API is a public API
+This is a simple example of exposing [PromptQL](https://promptql.hasura.io/) to real-time public data using the BART API. The BART API is a public API
 that provides real-time data on the Bay Area Rapid Transit system. This example demonstrates how to use PromptQL to
 create a real-time chat application that allows a user to talk to the BART API and get real-time information on
 departures.
