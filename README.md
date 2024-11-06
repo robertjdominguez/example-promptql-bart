@@ -5,9 +5,11 @@ that provides real-time data on the Bay Area Rapid Transit system. This example 
 create a real-time chat application that allows a user to talk to the BART API and get real-time information on
 departures.
 
+You can request access to a deployed version of this project [here](https://console.hasura.io/project/coherent-jennet-3826)!
+
 ## Getting Started
 
-> [!NOTE] 
+> [!NOTE]
 > Before you begin, make sure you have the latest version of the DDN CLI installed. You can install the CLI by
 > following the instructions in the [CLI documentation](https://promptql.hasura.io/docs/installation).
 
@@ -44,7 +46,7 @@ Add your Anthropic API key to the `.env` file:
 echo "ANTHROPIC_API_KEY=your-anthropic-api-key" >> .env
 ```
 
-> [!NOTE] 
+> [!NOTE]
 > You can generate an API key [here](https://console.anthropic.com/settings/keys).
 
 ### Step 4. Initialize a DDN project
