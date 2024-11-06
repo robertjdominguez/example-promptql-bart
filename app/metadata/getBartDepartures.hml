@@ -1,0 +1,84 @@
+---
+kind: ObjectType
+version: v1
+definition:
+  name: TrainEstimate
+  fields:
+    - name: destination
+      type: String!
+    - name: minutes
+      type: String!
+  graphql:
+    typeName: TrainEstimate
+    inputTypeName: TrainEstimate_input
+  dataConnectorTypeMapping:
+    - dataConnectorName: typescript
+      dataConnectorObjectType: TrainEstimate
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: TrainEstimate
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - destination
+          - minutes
+
+---
+kind: ObjectType
+version: v1
+definition:
+  name: BartDepartureResponse
+  fields:
+    - name: estimates
+      type: "[TrainEstimate!]"
+    - name: station
+      type: String
+  graphql:
+    typeName: BartDepartureResponse
+    inputTypeName: BartDepartureResponse_input
+  dataConnectorTypeMapping:
+    - dataConnectorName: typescript
+      dataConnectorObjectType: BartDepartureResponse
+
+---
+kind: TypePermissions
+version: v1
+definition:
+  typeName: BartDepartureResponse
+  permissions:
+    - role: admin
+      output:
+        allowedFields:
+          - estimates
+          - station
+
+---
+kind: Command
+version: v1
+definition:
+  name: getBartDepartures
+  outputType: BartDepartureResponse!
+  arguments:
+    - name: stationCode
+      type: String!
+  source:
+    dataConnectorName: typescript
+    dataConnectorCommand:
+      function: getBartDepartures
+  graphql:
+    rootFieldName: getBartDepartures
+    rootFieldKind: Query
+
+---
+kind: CommandPermissions
+version: v1
+definition:
+  commandName: getBartDepartures
+  permissions:
+    - role: admin
+      allowExecution: true
+
